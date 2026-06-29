@@ -1,0 +1,43 @@
+<section class="newsletter-section">
+  <div class="container">
+    <div class="newsletter-inner">
+      <p class="eyebrow">{{ section.settings.eyebrow }}</p>
+      <h2 class="newsletter-headline">{{ section.settings.heading }}</h2>
+
+      {% form 'customer' %}
+        <input type="hidden" name="contact[tags]" value="newsletter">
+        <div class="newsletter-form">
+          <input
+            class="newsletter-input"
+            type="email"
+            name="contact[email]"
+            placeholder="{{ section.settings.placeholder }}"
+            required
+            autocomplete="email"
+          >
+          <button class="newsletter-btn" type="submit">
+            {{ section.settings.button_label }}
+          </button>
+        </div>
+        {% if form.posted_successfully? %}
+          <p style="color:#B5C2A5;font-size:13px;margin-top:12px;">
+            You're in. Quiet emails incoming.
+          </p>
+        {% endif %}
+      {% endform %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Newsletter",
+  "settings": [
+    { "type": "text",     "id": "eyebrow",      "label": "Eyebrow",       "default": "JOIN THE HERD" },
+    { "type": "textarea", "id": "heading",       "label": "Heading",       "default": "Quiet emails. Stories from the foothills, drops, and the occasional care guide." },
+    { "type": "text",     "id": "placeholder",   "label": "Input placeholder", "default": "your@email.com" },
+    { "type": "text",     "id": "button_label",  "label": "Button label",  "default": "Subscribe" }
+  ],
+  "presets": [{ "name": "Newsletter" }]
+}
+{% endschema %}

@@ -1,0 +1,41 @@
+<section class="brand-story-section">
+  <!-- Left: copy -->
+  <div class="brand-story-content">
+    <p class="eyebrow">{{ section.settings.eyebrow }}</p>
+    <h2 class="serif-headline brand-story-headline">{{ section.settings.headline }}</h2>
+    <p class="brand-story-body">{{ section.settings.body }}</p>
+    <a class="brand-story-link" href="{{ section.settings.link_url }}">
+      {{ section.settings.link_label }} &rarr;
+    </a>
+  </div>
+
+  <!-- Right: image -->
+  <div class="brand-story-image">
+    {% if section.settings.image != blank %}
+      {{
+        section.settings.image
+        | image_url: width: 1200
+        | image_tag: loading: 'lazy', alt: section.settings.image.alt
+      }}
+    {% else %}
+      <div style="width:100%;height:100%;background:#4A6850;display:flex;align-items:center;justify-content:center;">
+        <span style="color:#B5C2A5;font-size:13px;letter-spacing:2px;">BRAND STORY IMAGE</span>
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Brand story",
+  "settings": [
+    { "type": "text",         "id": "eyebrow",    "label": "Eyebrow",      "default": "THE BRAND" },
+    { "type": "textarea",     "id": "headline",   "label": "Headline",     "default": "Designed in\nthe foothills." },
+    { "type": "textarea",     "id": "body",       "label": "Body copy",    "default": "Built to last, made for many uses, designed for years. Modern utility crafted from the wisdom of the wild." },
+    { "type": "text",         "id": "link_label", "label": "Link label",   "default": "Discover the story" },
+    { "type": "url",          "id": "link_url",   "label": "Link URL",     "default": "/pages/brand" },
+    { "type": "image_picker", "id": "image",      "label": "Image" }
+  ],
+  "presets": [{ "name": "Brand story" }]
+}
+{% endschema %}

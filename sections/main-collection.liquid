@@ -1,0 +1,73 @@
+<div class="collection-page">
+  <div class="container">
+    <div class="collection-header">
+      <p class="eyebrow">{{ collection.metafields.custom.eyebrow | default: 'COLLECTION' }}</p>
+      <h1 class="serif-headline">{{ collection.title }}</h1>
+      {% if collection.description != blank %}
+        <p style="font-size:14px;color:var(--hide);margin-top:12px;max-width:560px;">
+          {{ collection.description }}
+        </p>
+      {% endif %}
+    </div>
+
+    <div class="filter-bar">
+      <p class="filter-count">{{ collection.products_count }} products</p>
+      <select class="sort-select" name="sort_by">
+        {% for option in collection.sort_options %}
+          <option value="{{ option.value }}" {% if option.value == collection.sort_by %}selected{% endif %}>
+            {{ option.name }}
+          </option>
+        {% endfor %}
+      </select>
+    </div>
+
+    <div class="collection-grid">
+      {% for product in collection.products %}
+        <div class="product-card">
+          <a href="{{ product.url }}">
+            <div class="product-card-image">
+              {% if product.featured_image %}
+                {{
+                  product.featured_image
+                  | image_url: width: 600
+                  | image_tag: loading: 'lazy', alt: product.title
+                }}
+              {% else %}
+                <div style="width:100%;height:100%;background:#DDD8CC;"></div>
+              {% endif %}
+              {% if product.tags contains 'new' %}
+                <span class="product-badge">New</span>
+              {% elsif product.tags contains 'best-seller' %}
+                <span class="product-badge">Best seller</span>
+              {% endif %}
+            </div>
+          </a>
+          <a href="{{ product.url }}">
+            <p class="product-name">{{ product.title }}</p>
+            <p class="product-variant">{{ product.selected_or_first_available_variant.title }}</p>
+            <p class="product-price">{{ product.price | money }}</p>
+          </a>
+        </div>
+      {% else %}
+        <p style="color:var(--hide);font-size:14px;grid-column:1/-1;">
+          No products found in this collection.
+        </p>
+      {% endfor %}
+    </div>
+
+    <!-- Pagination -->
+    {% if paginate.pages > 1 %}
+      <div style="text-align:center;margin-top:56px;">
+        {{ paginate | default_pagination | replace: '&laquo; Previous', '← Previous' | replace: 'Next &raquo;', 'Next →' }}
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Collection page",
+  "settings": [],
+  "presets": [{ "name": "Collection page" }]
+}
+{% endschema %}

@@ -1,0 +1,118 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero",
+      "settings": {
+        "eyebrow": "NEW SEASON · 2026",
+        "headline": "Modern utility,\nquietly built.",
+        "subheadline": "Range, made for movement.",
+        "cta_label": "Shop the range",
+        "cta_url": "/collections/all",
+        "secondary_label": "Discover the story",
+        "secondary_url": "/pages/brand"
+      }
+    },
+    "category_strip": {
+      "type": "category-strip",
+      "block_order": ["travel", "tech", "tabletop", "apparel", "gift"],
+      "blocks": {
+        "travel":  { "type": "category", "settings": { "label": "Travel",         "url": "/collections/travel" } },
+        "tech":    { "type": "category", "settings": { "label": "Tech",           "url": "/collections/tech" } },
+        "tabletop":{ "type": "category", "settings": { "label": "Tabletop",       "url": "/collections/tabletop" } },
+        "apparel": { "type": "category", "settings": { "label": "Apparel (soon)", "url": "#" } },
+        "gift":    { "type": "category", "settings": { "label": "Gift",           "url": "/collections/gifts" } }
+      }
+    },
+    "editorial_cards": {
+      "type": "editorial-cards",
+      "settings": { "eyebrow": "SHOP BY WORLD" },
+      "block_order": ["card1", "card2", "card3"],
+      "blocks": {
+        "card1": { "type": "card", "settings": { "category": "TRAVEL",   "title": "Cabin & Commute",    "url": "/collections/travel",   "fallback_color": "#2C3D30" } },
+        "card2": { "type": "card", "settings": { "category": "TECH",     "title": "Sleeves for screens", "url": "/collections/tech",     "fallback_color": "#38342B" } },
+        "card3": { "type": "card", "settings": { "category": "TABLETOP", "title": "Desk & Dine",         "url": "/collections/tabletop", "fallback_color": "#3F4E3A" } }
+      }
+    },
+    "featured_products": {
+      "type": "featured-products",
+      "settings": {
+        "eyebrow": "THE RANGE",
+        "heading": "Built to last, made for many uses.",
+        "product_count": 4,
+        "view_all_url": "/collections/all"
+      },
+      "block_order": ["p1", "p2", "p3", "p4"],
+      "blocks": {
+        "p1": { "type": "product", "settings": { "badge": "New",         "name": "Cabin Fifteen Sleeve", "variant": "Tuskwood / 15\"", "price": "Rs 2,490" } },
+        "p2": { "type": "product", "settings": { "badge": "",            "name": "Brahmaputra Trolley",  "variant": "Cabin / 55cm",    "price": "Rs 12,990" } },
+        "p3": { "type": "product", "settings": { "badge": "Best seller", "name": "Tusk Tumbler",         "variant": "Insulated 750ml", "price": "Rs 1,290" } },
+        "p4": { "type": "product", "settings": { "badge": "",            "name": "Sela Tech Sleeve",     "variant": "Fog / 13\"",      "price": "Rs 1,890" } }
+      }
+    },
+    "brand_story": {
+      "type": "brand-story",
+      "settings": {
+        "eyebrow": "THE BRAND",
+        "headline": "Designed in\nthe foothills.",
+        "body": "Built to last, made for many uses, designed for years. Modern utility crafted from the wisdom of the wild.",
+        "link_label": "Discover the story",
+        "link_url": "/pages/brand"
+      }
+    },
+    "conservation": {
+      "type": "conservation",
+      "settings": {
+        "eyebrow": "CONSERVATION",
+        "headline": "Right of\nPassage",
+        "body": "How Wildlife Trust of India keeps elephants moving across their ancient corridors.",
+        "link_label": "Read more",
+        "link_url": "/blogs/journal"
+      }
+    },
+    "press": {
+      "type": "press-bar",
+      "settings": { "label": "AS SEEN IN" },
+      "block_order": ["p1","p2","p3","p4","p5"],
+      "blocks": {
+        "p1": { "type": "publication", "settings": { "name": "VOGUE INDIA" } },
+        "p2": { "type": "publication", "settings": { "name": "BUSINESS STANDARD" } },
+        "p3": { "type": "publication", "settings": { "name": "THE BETTER INDIA" } },
+        "p4": { "type": "publication", "settings": { "name": "CNBC TV18" } },
+        "p5": { "type": "publication", "settings": { "name": "OUTLOOK BUSINESS" } }
+      }
+    },
+    "journal": {
+      "type": "journal",
+      "settings": {
+        "eyebrow": "THE JOURNAL",
+        "heading": "Field notes from the foothills."
+      },
+      "block_order": ["a1","a2","a3"],
+      "blocks": {
+        "a1": { "type": "article", "settings": { "category": "FIELD NOTES",  "title": "A morning in the foothills, with notebook and a Sela Sleeve.", "date": "04 Apr 2026" } },
+        "a2": { "type": "article", "settings": { "category": "CONSERVATION", "title": "Right of Passage: how Wildlife Trust of India keeps elephants moving.", "date": "21 Mar 2026" } },
+        "a3": { "type": "article", "settings": { "category": "MATERIAL",     "title": "Why we chose recycled nylon for the Cabin Fifteen.", "date": "02 Mar 2026" } }
+      }
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "settings": {
+        "eyebrow": "JOIN THE HERD",
+        "heading": "Quiet emails. Stories from the foothills, drops, and the occasional care guide.",
+        "placeholder": "your@email.com",
+        "button_label": "Subscribe"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "category_strip",
+    "editorial_cards",
+    "featured_products",
+    "brand_story",
+    "conservation",
+    "press",
+    "journal",
+    "newsletter"
+  ]
+}

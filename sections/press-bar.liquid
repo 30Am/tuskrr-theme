@@ -1,0 +1,49 @@
+<div class="press-bar">
+  <div class="container">
+    <p class="press-label">{{ section.settings.label }}</p>
+    <ul class="press-list">
+      {% for block in section.blocks %}
+        <li class="press-item" {{ block.shopify_attributes }}>
+          {% if block.settings.url != blank %}
+            <a href="{{ block.settings.url }}" target="_blank" rel="noopener">
+              {{ block.settings.name }}
+            </a>
+          {% else %}
+            {{ block.settings.name }}
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Press bar",
+  "settings": [
+    { "type": "text", "id": "label", "label": "Label", "default": "AS SEEN IN" }
+  ],
+  "blocks": [
+    {
+      "type": "publication",
+      "name": "Publication",
+      "settings": [
+        { "type": "text", "id": "name", "label": "Name", "default": "VOGUE INDIA" },
+        { "type": "url",  "id": "url",  "label": "URL" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Press bar",
+      "blocks": [
+        { "type": "publication", "settings": { "name": "VOGUE INDIA" } },
+        { "type": "publication", "settings": { "name": "BUSINESS STANDARD" } },
+        { "type": "publication", "settings": { "name": "THE BETTER INDIA" } },
+        { "type": "publication", "settings": { "name": "CNBC TV18" } },
+        { "type": "publication", "settings": { "name": "OUTLOOK BUSINESS" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

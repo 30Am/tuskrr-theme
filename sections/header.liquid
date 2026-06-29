@@ -1,0 +1,61 @@
+<header class="site-header" role="banner">
+  <div class="container">
+    <!-- Left nav -->
+    <nav class="nav-left" aria-label="Primary navigation">
+      {% for link in linklists.main-menu.links limit: 4 %}
+        <a class="nav-link{% if link.active %} nav-link--active{% endif %}" href="{{ link.url }}">
+          {{ link.title }}
+        </a>
+      {% endfor %}
+    </nav>
+
+    <!-- Hamburger (mobile) -->
+    <button class="hamburger" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <!-- Logo -->
+    <a class="site-logo" href="{{ routes.root_url }}" aria-label="{{ shop.name }}">
+      {{ shop.name | upcase }}
+    </a>
+
+    <!-- Right nav -->
+    <div class="nav-right">
+      {% for link in linklists.main-menu.links offset: 4 limit: 2 %}
+        <a class="nav-link" href="{{ link.url }}">{{ link.title }}</a>
+      {% endfor %}
+
+      <!-- Search -->
+      <button class="nav-icon" aria-label="Search">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+          <circle cx="11" cy="11" r="7"/><path d="m21 21-4.35-4.35"/>
+        </svg>
+      </button>
+
+      <!-- Wishlist -->
+      <button class="nav-icon" aria-label="Wishlist">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+        </svg>
+      </button>
+
+      <!-- Cart -->
+      <a class="nav-icon nav-cart-count" href="{{ routes.cart_url }}" aria-label="Cart ({{ cart.item_count }} items)">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>
+        </svg>
+        {% if cart.item_count > 0 %}
+          <span class="cart-badge">{{ cart.item_count }}</span>
+        {% endif %}
+      </a>
+    </div>
+  </div>
+</header>
+
+{% schema %}
+{
+  "name": "Header",
+  "settings": [],
+  "presets": [{ "name": "Header" }]
+}
+{% endschema %}

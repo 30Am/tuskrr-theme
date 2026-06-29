@@ -1,0 +1,66 @@
+<section class="editorial-section">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-head-left">
+        <p class="eyebrow">{{ section.settings.eyebrow }}</p>
+      </div>
+    </div>
+
+    <div class="editorial-grid">
+      {% for block in section.blocks %}
+        <a class="editorial-card" href="{{ block.settings.url }}" {{ block.shopify_attributes }}>
+          <div class="editorial-card-image">
+            {% if block.settings.image != blank %}
+              {{
+                block.settings.image
+                | image_url: width: 900
+                | image_tag: loading: 'lazy', alt: block.settings.title
+              }}
+            {% else %}
+              <div style="width:100%;height:100%;background:{{ block.settings.fallback_color }};"></div>
+            {% endif %}
+          </div>
+          <div class="editorial-card-overlay"></div>
+          <div class="editorial-card-body">
+            <p class="eyebrow">{{ block.settings.category }}</p>
+            <h3 class="editorial-card-title">{{ block.settings.title }}</h3>
+            <div class="editorial-card-arrow">&#8594;</div>
+          </div>
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Editorial cards",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "SHOP BY WORLD" }
+  ],
+  "max_blocks": 3,
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Card",
+      "settings": [
+        { "type": "image_picker", "id": "image",          "label": "Image" },
+        { "type": "text",         "id": "category",        "label": "Category label",   "default": "TRAVEL" },
+        { "type": "text",         "id": "title",           "label": "Title",             "default": "Cabin & Commute" },
+        { "type": "url",          "id": "url",             "label": "Link" },
+        { "type": "text",         "id": "fallback_color",  "label": "Fallback bg color", "default": "#2E3A2E" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Editorial cards",
+      "blocks": [
+        { "type": "card", "settings": { "category": "TRAVEL",   "title": "Cabin & Commute",    "fallback_color": "#2C3D30" } },
+        { "type": "card", "settings": { "category": "TECH",     "title": "Sleeves for screens", "fallback_color": "#38342B" } },
+        { "type": "card", "settings": { "category": "TABLETOP", "title": "Desk & Dine",         "fallback_color": "#3F4E3A" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

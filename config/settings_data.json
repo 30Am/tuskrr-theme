@@ -1,0 +1,12 @@
+{
+  "current": {
+    "color_tuskwood":   "#1F3A2E",
+    "color_sanctuary":  "#4A6850",
+    "color_sage_mist":  "#B5C2A5",
+    "color_ivory_tusk": "#F4ECD8",
+    "color_brass":      "#B8945C",
+    "color_hide":       "#6B6155",
+    "heading_font":     "Playfair Display",
+    "body_font":        "Inter"
+  }
+}

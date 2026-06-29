@@ -1,0 +1,55 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "TUSKRR",
+    "theme_version": "1.0.0",
+    "theme_author": "TUSKRR",
+    "theme_documentation_url": "https://tuskrr.com",
+    "theme_support_url": "https://tuskrr.com"
+  },
+  {
+    "name": "Colors",
+    "settings": [
+      { "type": "color", "id": "color_tuskwood",   "label": "Tuskwood (primary)",  "default": "#1F3A2E" },
+      { "type": "color", "id": "color_sanctuary",  "label": "Sanctuary (green)",   "default": "#4A6850" },
+      { "type": "color", "id": "color_sage_mist",  "label": "Sage Mist",           "default": "#B5C2A5" },
+      { "type": "color", "id": "color_ivory_tusk", "label": "Ivory Tusk (bg)",     "default": "#F4ECD8" },
+      { "type": "color", "id": "color_brass",      "label": "Brass (accent)",      "default": "#B8945C" },
+      { "type": "color", "id": "color_hide",       "label": "Hide (secondary text)","default": "#6B6155" }
+    ]
+  },
+  {
+    "name": "Typography",
+    "settings": [
+      {
+        "type": "select",
+        "id": "heading_font",
+        "label": "Heading font",
+        "options": [
+          { "value": "Playfair Display", "label": "Playfair Display" },
+          { "value": "Georgia",          "label": "Georgia" },
+          { "value": "Times New Roman",  "label": "Times New Roman" }
+        ],
+        "default": "Playfair Display"
+      },
+      {
+        "type": "select",
+        "id": "body_font",
+        "label": "Body font",
+        "options": [
+          { "value": "Inter",             "label": "Inter" },
+          { "value": "system-ui",         "label": "System default" }
+        ],
+        "default": "Inter"
+      }
+    ]
+  },
+  {
+    "name": "Social media",
+    "settings": [
+      { "type": "text", "id": "instagram_url", "label": "Instagram URL" },
+      { "type": "text", "id": "youtube_url",   "label": "YouTube URL" },
+      { "type": "text", "id": "pinterest_url", "label": "Pinterest URL" }
+    ]
+  }
+]

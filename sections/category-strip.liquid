@@ -1,0 +1,40 @@
+<nav class="category-strip" aria-label="Shop categories">
+  <div class="container">
+    <div class="category-strip-inner">
+      {% for block in section.blocks %}
+        <a class="cat-item" href="{{ block.settings.url }}" {{ block.shopify_attributes }}>
+          {{ block.settings.label }}
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+</nav>
+
+{% schema %}
+{
+  "name": "Category strip",
+  "max_blocks": 8,
+  "blocks": [
+    {
+      "type": "category",
+      "name": "Category",
+      "settings": [
+        { "type": "text", "id": "label", "label": "Label",  "default": "Travel" },
+        { "type": "url",  "id": "url",   "label": "Link",   "default": "/collections/travel" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Category strip",
+      "blocks": [
+        { "type": "category", "settings": { "label": "Travel",          "url": "/collections/travel" } },
+        { "type": "category", "settings": { "label": "Tech",            "url": "/collections/tech" } },
+        { "type": "category", "settings": { "label": "Tabletop",        "url": "/collections/tabletop" } },
+        { "type": "category", "settings": { "label": "Apparel (soon)",  "url": "#" } },
+        { "type": "category", "settings": { "label": "Gift",            "url": "/collections/gifts" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,32 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "block_order": ["details", "shipping", "care"],
+      "blocks": {
+        "details": {
+          "type": "accordion",
+          "settings": {
+            "heading": "Details & materials",
+            "content": "<p>Crafted from recycled nylon with YKK zippers and brass hardware. Made in India by skilled artisans.</p>"
+          }
+        },
+        "shipping": {
+          "type": "accordion",
+          "settings": {
+            "heading": "Shipping & returns",
+            "content": "<p>Free shipping on orders over Rs 2,500. Free returns within 14 days of delivery.</p>"
+          }
+        },
+        "care": {
+          "type": "accordion",
+          "settings": {
+            "heading": "Care guide",
+            "content": "<p>Wipe clean with a damp cloth. Do not machine wash. Store in the dust bag provided.</p>"
+          }
+        }
+      }
+    }
+  },
+  "order": ["main"]
+}

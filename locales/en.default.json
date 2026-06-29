@@ -1,0 +1,17 @@
+{
+  "general": {
+    "search": { "title": "Search", "placeholder": "Search products..." },
+    "cart":   { "title": "Your bag", "empty": "Your bag is empty.", "count": "{{ count }} items" }
+  },
+  "products": {
+    "product": {
+      "add_to_cart":   "Add to bag",
+      "sold_out":      "Sold out",
+      "unavailable":   "Unavailable",
+      "compare_at":    "Was"
+    }
+  },
+  "newsletter": {
+    "success": "You're in. Quiet emails incoming."
+  }
+}
