@@ -153,15 +153,13 @@
 
 <!-- Brand Story -->
 <section class="brand-story-section">
-  <div class="brand-story-left">
-    <div class="brand-story-copy">
-      <p class="eyebrow" style="color:var(--sage-mist);">THE BRAND</p>
-      <h2 class="serif-headline brand-story-headline">Designed in<br>the foothills.</h2>
-      <p class="brand-story-body">Built to last, made for many uses, designed for years. Modern utility crafted from the wisdom of the wild.</p>
-      <a class="brand-story-link" href="/pages/brand">Discover the story &rarr;</a>
-    </div>
+  <div class="brand-story-content">
+    <p class="eyebrow">THE BRAND</p>
+    <h2 class="serif-headline brand-story-headline">Designed in<br>the foothills.</h2>
+    <p class="brand-story-body">Built to last, made for many uses, designed for years. Modern utility crafted from the wisdom of the wild.</p>
+    <a class="brand-story-link" href="/pages/brand">Discover the story &rarr;</a>
   </div>
-  <div class="brand-story-right">
+  <div class="brand-story-image">
     {% if section.settings.brand_image != blank %}
       {{ section.settings.brand_image | image_url: width: 1200 | image_tag: loading: 'lazy', alt: 'Brand' }}
     {% else %}
@@ -183,7 +181,7 @@
       </div>
     {% endif %}
   </div>
-  <div class="conservation-copy">
+  <div class="conservation-content">
     <p class="eyebrow">CONSERVATION</p>
     <h2 class="serif-headline conservation-headline">Right of<br>Passage</h2>
     <p class="conservation-body">How Wildlife Trust of India keeps elephants moving across their ancient corridors.</p>
