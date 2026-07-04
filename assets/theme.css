@@ -301,6 +301,7 @@ ul { list-style: none; }
 .cat-item:first-child { border-left: none; }
 .cat-item:last-child { border-right: none; }
 .cat-item:hover { color: var(--sanctuary); }
+.cat-item--muted { color: var(--hide); pointer-events: none; font-style: italic; }
 
 /* ── Editorial Cards ── */
 .editorial-section {
