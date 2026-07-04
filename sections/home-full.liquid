@@ -1,0 +1,295 @@
+<!-- TUSKRR Full Homepage -->
+
+<!-- Hero -->
+<section class="hero-section">
+  <div class="hero-content">
+    <p class="eyebrow">NEW SEASON · 2026</p>
+    <h1 class="serif-headline hero-headline">Modern utility,<br>quietly built.</h1>
+    <p class="hero-sub">Range, made for movement.</p>
+    <div class="hero-actions">
+      <a class="btn-primary" href="/collections/all">Shop the range</a>
+      <a class="hero-link" href="/pages/brand">Discover the story &rarr;</a>
+    </div>
+  </div>
+  <div class="hero-image">
+    {% if section.settings.hero_image != blank %}
+      {{ section.settings.hero_image | image_url: width: 1400 | image_tag: loading: 'eager', alt: 'Hero' }}
+    {% else %}
+      <div style="width:100%;height:100%;background:#243328;display:flex;align-items:center;justify-content:center;">
+        <span style="color:#4A6850;font-size:12px;letter-spacing:3px;">HERO IMAGE</span>
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+<!-- Category Strip -->
+<div class="category-strip">
+  <div class="container">
+    <div class="category-strip-inner">
+      <a class="cat-item" href="/collections/travel">Travel</a>
+      <a class="cat-item" href="/collections/tech">Tech</a>
+      <a class="cat-item" href="/collections/tabletop">Tabletop</a>
+      <a class="cat-item cat-item--muted" href="#">Apparel (soon)</a>
+      <a class="cat-item" href="/collections/gifts">Gift</a>
+    </div>
+  </div>
+</div>
+
+<!-- Editorial Cards -->
+<section class="editorial-section">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-head-left">
+        <p class="eyebrow">SHOP BY WORLD</p>
+      </div>
+    </div>
+    <div class="editorial-grid">
+      <a class="editorial-card" href="/collections/travel">
+        <div class="editorial-card-image">
+          {% if section.settings.card1_image != blank %}
+            {{ section.settings.card1_image | image_url: width: 900 | image_tag: loading: 'lazy', alt: 'Travel' }}
+          {% else %}
+            <div style="width:100%;height:100%;background:#2C3D30;"></div>
+          {% endif %}
+        </div>
+        <div class="editorial-card-overlay"></div>
+        <div class="editorial-card-body">
+          <p class="eyebrow">TRAVEL</p>
+          <h3 class="editorial-card-title">Cabin &amp; Commute</h3>
+          <div class="editorial-card-arrow">&#8594;</div>
+        </div>
+      </a>
+      <a class="editorial-card" href="/collections/tech">
+        <div class="editorial-card-image">
+          {% if section.settings.card2_image != blank %}
+            {{ section.settings.card2_image | image_url: width: 900 | image_tag: loading: 'lazy', alt: 'Tech' }}
+          {% else %}
+            <div style="width:100%;height:100%;background:#38342B;"></div>
+          {% endif %}
+        </div>
+        <div class="editorial-card-overlay"></div>
+        <div class="editorial-card-body">
+          <p class="eyebrow">TECH</p>
+          <h3 class="editorial-card-title">Sleeves for screens</h3>
+          <div class="editorial-card-arrow">&#8594;</div>
+        </div>
+      </a>
+      <a class="editorial-card" href="/collections/tabletop">
+        <div class="editorial-card-image">
+          {% if section.settings.card3_image != blank %}
+            {{ section.settings.card3_image | image_url: width: 900 | image_tag: loading: 'lazy', alt: 'Tabletop' }}
+          {% else %}
+            <div style="width:100%;height:100%;background:#3F4E3A;"></div>
+          {% endif %}
+        </div>
+        <div class="editorial-card-overlay"></div>
+        <div class="editorial-card-body">
+          <p class="eyebrow">TABLETOP</p>
+          <h3 class="editorial-card-title">Desk &amp; Dine</h3>
+          <div class="editorial-card-arrow">&#8594;</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Featured Products -->
+<section class="products-section">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-head-left">
+        <p class="eyebrow">THE RANGE</p>
+        <h2 class="serif-headline">Built to last, made for many uses.</h2>
+      </div>
+    </div>
+    <div class="products-grid">
+      {% assign feat_col = collections[section.settings.featured_collection] %}
+      {% if feat_col != blank and feat_col.products.size > 0 %}
+        {% for product in feat_col.products limit: 4 %}
+          <div class="product-card">
+            <a href="{{ product.url }}">
+              <div class="product-card-image">
+                {% if product.featured_image %}
+                  {{ product.featured_image | image_url: width: 600 | image_tag: loading: 'lazy', alt: product.title }}
+                {% else %}
+                  <div style="width:100%;height:100%;background:#DDD8CC;"></div>
+                {% endif %}
+              </div>
+            </a>
+            <a href="{{ product.url }}">
+              <p class="product-name">{{ product.title }}</p>
+              <p class="product-price">{{ product.price | money }}</p>
+            </a>
+          </div>
+        {% endfor %}
+      {% else %}
+        <div class="product-card">
+          <div class="product-card-image" style="background:#DDD8CC;"></div>
+          <p class="product-name">Cabin Fifteen Sleeve</p>
+          <p class="product-price">Rs 2,490</p>
+        </div>
+        <div class="product-card">
+          <div class="product-card-image" style="background:#DDD8CC;"></div>
+          <p class="product-name">Brahmaputra Trolley</p>
+          <p class="product-price">Rs 12,990</p>
+        </div>
+        <div class="product-card">
+          <div class="product-card-image" style="background:#DDD8CC;"></div>
+          <p class="product-name">Tusk Tumbler</p>
+          <p class="product-price">Rs 1,290</p>
+        </div>
+        <div class="product-card">
+          <div class="product-card-image" style="background:#DDD8CC;"></div>
+          <p class="product-name">Sela Tech Sleeve</p>
+          <p class="product-price">Rs 1,890</p>
+        </div>
+      {% endif %}
+    </div>
+    <div class="products-footer">
+      <a class="view-all-link" href="/collections/all">View all products &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<!-- Brand Story -->
+<section class="brand-story-section">
+  <div class="brand-story-left">
+    <div class="brand-story-copy">
+      <p class="eyebrow" style="color:var(--sage-mist);">THE BRAND</p>
+      <h2 class="serif-headline brand-story-headline">Designed in<br>the foothills.</h2>
+      <p class="brand-story-body">Built to last, made for many uses, designed for years. Modern utility crafted from the wisdom of the wild.</p>
+      <a class="brand-story-link" href="/pages/brand">Discover the story &rarr;</a>
+    </div>
+  </div>
+  <div class="brand-story-right">
+    {% if section.settings.brand_image != blank %}
+      {{ section.settings.brand_image | image_url: width: 1200 | image_tag: loading: 'lazy', alt: 'Brand' }}
+    {% else %}
+      <div style="width:100%;height:100%;background:#2C3D30;display:flex;align-items:center;justify-content:center;">
+        <span style="color:#4A6850;font-size:12px;letter-spacing:2px;">BRAND IMAGE</span>
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+<!-- Conservation -->
+<section class="conservation-section">
+  <div class="conservation-image">
+    {% if section.settings.conservation_image != blank %}
+      {{ section.settings.conservation_image | image_url: width: 1200 | image_tag: loading: 'lazy', alt: 'Conservation' }}
+    {% else %}
+      <div style="width:100%;height:100%;background:#2A3B2E;display:flex;align-items:center;justify-content:center;">
+        <span style="color:#4A6850;font-size:12px;letter-spacing:2px;">CONSERVATION IMAGE</span>
+      </div>
+    {% endif %}
+  </div>
+  <div class="conservation-copy">
+    <p class="eyebrow">CONSERVATION</p>
+    <h2 class="serif-headline conservation-headline">Right of<br>Passage</h2>
+    <p class="conservation-body">How Wildlife Trust of India keeps elephants moving across their ancient corridors.</p>
+    <a class="conservation-link" href="/blogs/journal">Read more &rarr;</a>
+  </div>
+</section>
+
+<!-- Press Bar -->
+<div class="press-bar">
+  <div class="container">
+    <p class="press-label">AS SEEN IN</p>
+    <div class="press-logos">
+      <span class="press-name">VOGUE INDIA</span>
+      <span class="press-name">BUSINESS STANDARD</span>
+      <span class="press-name">THE BETTER INDIA</span>
+      <span class="press-name">CNBC TV18</span>
+      <span class="press-name">OUTLOOK BUSINESS</span>
+    </div>
+  </div>
+</div>
+
+<!-- Journal -->
+<section class="journal-section">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-head-left">
+        <p class="eyebrow">THE JOURNAL</p>
+        <h2 class="serif-headline">Field notes from the foothills.</h2>
+      </div>
+    </div>
+    <div class="journal-grid">
+      {% assign jblog = blogs[section.settings.journal_blog] %}
+      {% if jblog != blank and jblog.articles.size > 0 %}
+        {% for article in jblog.articles limit: 3 %}
+          <article class="journal-card">
+            <a href="{{ article.url }}">
+              <div class="journal-card-image">
+                {% if article.image %}
+                  {{ article.image | image_url: width: 700 | image_tag: loading: 'lazy', alt: article.title }}
+                {% else %}
+                  <div style="width:100%;height:100%;background:#D4D0C6;"></div>
+                {% endif %}
+              </div>
+            </a>
+            <p class="journal-category">{{ article.tags.first | upcase }}</p>
+            <h3 class="journal-title"><a href="{{ article.url }}">{{ article.title }}</a></h3>
+            <div class="journal-footer">
+              <span class="journal-date">{{ article.published_at | date: '%d %b %Y' }}</span>
+              <a class="journal-read" href="{{ article.url }}">Read &rarr;</a>
+            </div>
+          </article>
+        {% endfor %}
+      {% else %}
+        <article class="journal-card">
+          <div class="journal-card-image" style="background:#D4D0C6;"></div>
+          <p class="journal-category">FIELD NOTES</p>
+          <h3 class="journal-title">A morning in the foothills, with notebook and a Sela Sleeve.</h3>
+          <div class="journal-footer"><span class="journal-date">04 Apr 2026</span></div>
+        </article>
+        <article class="journal-card">
+          <div class="journal-card-image" style="background:#D4D0C6;"></div>
+          <p class="journal-category">CONSERVATION</p>
+          <h3 class="journal-title">Right of Passage: how Wildlife Trust of India keeps elephants moving.</h3>
+          <div class="journal-footer"><span class="journal-date">21 Mar 2026</span></div>
+        </article>
+        <article class="journal-card">
+          <div class="journal-card-image" style="background:#D4D0C6;"></div>
+          <p class="journal-category">MATERIAL</p>
+          <h3 class="journal-title">Why we chose recycled nylon for the Cabin Fifteen.</h3>
+          <div class="journal-footer"><span class="journal-date">02 Mar 2026</span></div>
+        </article>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+<!-- Newsletter -->
+<section class="newsletter-section">
+  <div class="container">
+    <div class="newsletter-inner">
+      <p class="eyebrow">JOIN THE HERD</p>
+      <h2 class="newsletter-headline">Quiet emails. Stories from the foothills, drops, and the occasional care guide.</h2>
+      {% form 'customer' %}
+        <input type="hidden" name="contact[tags]" value="newsletter">
+        <div class="newsletter-form">
+          <input class="newsletter-input" type="email" name="contact[email]" placeholder="your@email.com" required autocomplete="email">
+          <button class="newsletter-btn" type="submit">Subscribe</button>
+        </div>
+      {% endform %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Home — Full page",
+  "settings": [
+    { "type": "image_picker", "id": "hero_image",          "label": "Hero image" },
+    { "type": "image_picker", "id": "card1_image",         "label": "Editorial card 1 image" },
+    { "type": "image_picker", "id": "card2_image",         "label": "Editorial card 2 image" },
+    { "type": "image_picker", "id": "card3_image",         "label": "Editorial card 3 image" },
+    { "type": "collection",   "id": "featured_collection", "label": "Featured products collection" },
+    { "type": "image_picker", "id": "brand_image",         "label": "Brand story image" },
+    { "type": "image_picker", "id": "conservation_image",  "label": "Conservation image" },
+    { "type": "blog",         "id": "journal_blog",        "label": "Journal blog" }
+  ],
+  "presets": [{ "name": "Home — Full page" }]
+}
+{% endschema %}
