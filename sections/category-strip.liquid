@@ -1,40 +1,38 @@
-<nav class="category-strip" aria-label="Shop categories">
+<div class="category-strip">
   <div class="container">
     <div class="category-strip-inner">
       {% for block in section.blocks %}
-        <a class="cat-item" href="{{ block.settings.url }}" {{ block.shopify_attributes }}>
+        <a class="cat-item {% if block.settings.label contains 'soon' %}cat-item--muted{% endif %}"
+           href="{{ block.settings.url }}" {{ block.shopify_attributes }}>
           {{ block.settings.label }}
         </a>
       {% endfor %}
     </div>
   </div>
-</nav>
+</div>
 
 {% schema %}
 {
   "name": "Category strip",
-  "max_blocks": 8,
   "blocks": [
     {
       "type": "category",
       "name": "Category",
       "settings": [
-        { "type": "text", "id": "label", "label": "Label",  "default": "Travel" },
+        { "type": "text", "id": "label", "label": "Label", "default": "Category" },
         { "type": "url",  "id": "url",   "label": "Link" }
       ]
     }
   ],
-  "presets": [
-    {
-      "name": "Category strip",
-      "blocks": [
-        { "type": "category", "settings": { "label": "Travel",          "url": "/collections/travel" } },
-        { "type": "category", "settings": { "label": "Tech",            "url": "/collections/tech" } },
-        { "type": "category", "settings": { "label": "Tabletop",        "url": "/collections/tabletop" } },
-        { "type": "category", "settings": { "label": "Apparel (soon)",  "url": "#" } },
-        { "type": "category", "settings": { "label": "Gift",            "url": "/collections/gifts" } }
-      ]
-    }
-  ]
+  "presets": [{
+    "name": "Category strip",
+    "blocks": [
+      { "type": "category", "settings": { "label": "Travel" } },
+      { "type": "category", "settings": { "label": "Tech" } },
+      { "type": "category", "settings": { "label": "Tabletop" } },
+      { "type": "category", "settings": { "label": "Apparel (soon)" } },
+      { "type": "category", "settings": { "label": "Gift" } }
+    ]
+  }]
 }
 {% endschema %}

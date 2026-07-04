@@ -1,40 +1,17 @@
 <section class="hero-section">
-  <!-- Left: copy -->
   <div class="hero-content">
-    {% if section.settings.eyebrow != blank %}
-      <p class="eyebrow">{{ section.settings.eyebrow }}</p>
-    {% endif %}
-
+    <p class="eyebrow">{{ section.settings.eyebrow }}</p>
     <h1 class="serif-headline hero-headline">{{ section.settings.headline }}</h1>
     <p class="hero-sub">{{ section.settings.subheadline }}</p>
-
     <div class="hero-actions">
-      {% if section.settings.cta_label != blank %}
-        <a class="btn-primary" href="{{ section.settings.cta_url }}">
-          {{ section.settings.cta_label }}
-        </a>
-      {% endif %}
-      {% if section.settings.secondary_label != blank %}
-        <a class="hero-link" href="{{ section.settings.secondary_url }}">
-          {{ section.settings.secondary_label }} &rarr;
-        </a>
-      {% endif %}
+      <a class="btn-primary" href="/collections/all">{{ section.settings.cta_label }}</a>
+      <a class="hero-link" href="/pages/brand">{{ section.settings.secondary_label }} &rarr;</a>
     </div>
   </div>
-
-  <!-- Right: image -->
   <div class="hero-image">
-    {% if section.settings.image != blank %}
-      {{
-        section.settings.image
-        | image_url: width: 1200
-        | image_tag: loading: 'eager', alt: section.settings.image.alt
-      }}
-    {% else %}
-      <div style="width:100%;height:100%;background:#243328;display:flex;align-items:center;justify-content:center;">
-        <span style="color:#4A6850;font-size:13px;letter-spacing:2px;">HERO IMAGE</span>
-      </div>
-    {% endif %}
+    <div style="width:100%;height:100%;background:#243328;display:flex;align-items:center;justify-content:center;">
+      <span style="color:#4A6850;font-size:13px;letter-spacing:2px;">ADD HERO IMAGE</span>
+    </div>
   </div>
 </section>
 
@@ -42,13 +19,11 @@
 {
   "name": "Hero",
   "settings": [
-    { "type": "text",    "id": "eyebrow",         "label": "Eyebrow",          "default": "NEW SEASON · 2026" },
-    { "type": "textarea","id": "headline",         "label": "Headline",         "default": "Modern utility,\nquietly built." },
-    { "type": "text",    "id": "subheadline",      "label": "Sub-headline",     "default": "Range, made for movement." },
-    { "type": "text",    "id": "cta_label",        "label": "CTA label",        "default": "Shop the range" },
-    { "type": "url",     "id": "cta_url",          "label": "CTA URL" },
-    { "type": "text",    "id": "secondary_label",  "label": "Secondary label",  "default": "Discover the story" },
-    { "type": "url",     "id": "secondary_url",    "label": "Secondary URL" },
+    { "type": "text",     "id": "eyebrow",        "label": "Eyebrow",       "default": "NEW SEASON · 2026" },
+    { "type": "textarea", "id": "headline",        "label": "Headline",      "default": "Modern utility, quietly built." },
+    { "type": "text",     "id": "subheadline",     "label": "Sub-headline",  "default": "Range, made for movement." },
+    { "type": "text",     "id": "cta_label",       "label": "CTA label",     "default": "Shop the range" },
+    { "type": "text",     "id": "secondary_label", "label": "Secondary CTA", "default": "Discover the story" },
     { "type": "image_picker", "id": "image",       "label": "Hero image" }
   ],
   "presets": [{ "name": "Hero" }]

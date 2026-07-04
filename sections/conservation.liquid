@@ -1,21 +1,14 @@
 <section class="conservation-section">
-  <!-- Left: image -->
   <div class="conservation-image">
     {% if section.settings.image != blank %}
-      {{
-        section.settings.image
-        | image_url: width: 1200
-        | image_tag: loading: 'lazy', alt: section.settings.image.alt
-      }}
+      {{ section.settings.image | image_url: width: 1200 | image_tag: loading: 'lazy', alt: section.settings.eyebrow }}
     {% else %}
-      <div style="width:100%;height:100%;background:#2C4035;display:flex;align-items:center;justify-content:center;">
-        <span style="color:#4A6850;font-size:13px;letter-spacing:2px;">CONSERVATION IMAGE</span>
+      <div style="width:100%;height:100%;background:#2A3B2E;display:flex;align-items:center;justify-content:center;">
+        <span style="color:#4A6850;font-size:12px;letter-spacing:2px;">CONSERVATION IMAGE</span>
       </div>
     {% endif %}
   </div>
-
-  <!-- Right: copy -->
-  <div class="conservation-content">
+  <div class="conservation-copy">
     <p class="eyebrow">{{ section.settings.eyebrow }}</p>
     <h2 class="serif-headline conservation-headline">{{ section.settings.headline }}</h2>
     <p class="conservation-body">{{ section.settings.body }}</p>
@@ -31,8 +24,8 @@
   "settings": [
     { "type": "image_picker", "id": "image",      "label": "Image" },
     { "type": "text",         "id": "eyebrow",    "label": "Eyebrow",    "default": "CONSERVATION" },
-    { "type": "textarea",     "id": "headline",   "label": "Headline",   "default": "Right of\nPassage" },
-    { "type": "textarea",     "id": "body",       "label": "Body copy",  "default": "How Wildlife Trust of India keeps elephants moving across their ancient corridors." },
+    { "type": "textarea",     "id": "headline",   "label": "Headline",   "default": "Right of Passage" },
+    { "type": "textarea",     "id": "body",        "label": "Body",       "default": "How Wildlife Trust of India keeps elephants moving." },
     { "type": "text",         "id": "link_label", "label": "Link label", "default": "Read more" },
     { "type": "url",          "id": "link_url",   "label": "Link URL" }
   ],
