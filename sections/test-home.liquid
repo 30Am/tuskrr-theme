@@ -1,0 +1,17 @@
+<div style="background:#1F3A2E;min-height:400px;display:flex;align-items:center;justify-content:center;padding:60px 40px;">
+  <div style="text-align:center;color:#F4ECD8;">
+    <p style="font-size:12px;letter-spacing:4px;margin-bottom:16px;">TUSKRR</p>
+    <h1 style="font-family:serif;font-size:48px;margin:0;">Theme is working.</h1>
+    <p style="margin-top:20px;opacity:0.7;">{{ section.settings.message }}</p>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Test Home",
+  "settings": [
+    { "type": "text", "id": "message", "label": "Message", "default": "Sections are rendering correctly." }
+  ],
+  "presets": [{ "name": "Test Home" }]
+}
+{% endschema %}
