@@ -1,24 +1,6 @@
 {
   "sections": {
-    "hero": { "type": "hero" },
-    "category_strip": { "type": "category-strip" },
-    "editorial_cards": { "type": "editorial-cards" },
-    "featured_products": { "type": "featured-products" },
-    "brand_story": { "type": "brand-story" },
-    "conservation": { "type": "conservation" },
-    "press": { "type": "press-bar" },
-    "journal": { "type": "journal" },
     "newsletter": { "type": "newsletter" }
   },
-  "order": [
-    "hero",
-    "category_strip",
-    "editorial_cards",
-    "featured_products",
-    "brand_story",
-    "conservation",
-    "press",
-    "journal",
-    "newsletter"
-  ]
+  "order": ["newsletter"]
 }
