@@ -216,7 +216,7 @@ ul { list-style: none; }
 /* ── Hero ── */
 .hero-section {
   display: grid;
-  grid-template-columns: 660px 1fr;
+  grid-template-columns: min(660px, 50%) 1fr;
   height: 700px;
   overflow: hidden;
 }
@@ -224,8 +224,8 @@ ul { list-style: none; }
   background: var(--ivory-tusk);
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  padding: var(--margin) var(--margin) 64px;
+  justify-content: center;
+  padding: 64px var(--margin);
 }
 .hero-content .eyebrow { margin-bottom: 24px; }
 .hero-headline {
