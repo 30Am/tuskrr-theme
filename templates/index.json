@@ -13,7 +13,12 @@
       "type": "home-full",
       "settings": {
         "hero_image": "shopify://shop_images/Gemini_Generated_Image_4ybxbq4ybxbq4ybx.png",
-        "featured_collection": "",
+        "card1_image": "shopify://shop_images/Gemini_Generated_Image_owbrxjowbrxjowbr.png",
+        "card2_image": "shopify://shop_images/Gemini_Generated_Image_i9k1gki9k1gki9k1.png",
+        "card3_image": "shopify://shop_images/Gemini_Generated_Image_7d44ew7d44ew7d44.png",
+        "featured_collection": "frontpage",
+        "brand_image": "shopify://shop_images/Gemini_Generated_Image_qepq0iqepq0iqepq.png",
+        "conservation_image": "shopify://shop_images/Gemini_Generated_Image_j1scikj1scikj1sc.png",
         "journal_blog": ""
       }
     }
