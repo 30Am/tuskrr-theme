@@ -445,7 +445,7 @@ ul { list-style: none; }
 /* ── Brand Story ── */
 .brand-story-section {
   display: grid;
-  grid-template-columns: 660px 1fr;
+  grid-template-columns: min(660px, 50%) 1fr;
   height: 600px;
   overflow: hidden;
   background: var(--tuskwood);
@@ -493,7 +493,7 @@ ul { list-style: none; }
 /* ── Conservation ── */
 .conservation-section {
   display: grid;
-  grid-template-columns: 640px 1fr;
+  grid-template-columns: min(640px, 50%) 1fr;
   height: 440px;
   background: var(--ivory-tusk);
   border-top: 1px solid var(--divider);
@@ -951,6 +951,14 @@ ul { list-style: none; }
   .footer-top { grid-template-columns: 1fr 1fr; gap: 32px; }
   .products-grid { grid-template-columns: repeat(2, 1fr); }
   .collection-grid { grid-template-columns: repeat(3, 1fr); }
+
+  /* Scale down split-section headlines at mid viewport */
+  .brand-story-headline { font-size: 44px; line-height: 54px; }
+  .brand-story-content { padding: 48px var(--margin); }
+  .conservation-headline { font-size: 34px; line-height: 42px; }
+  .conservation-content { padding: 48px 48px; }
+  .brand-story-section { height: auto; min-height: 480px; }
+  .conservation-section { height: auto; min-height: 380px; }
 }
 
 @media (max-width: 768px) {
