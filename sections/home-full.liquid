@@ -104,9 +104,10 @@
     </div>
     <div class="products-grid">
       {% assign feat_col = collections[section.settings.featured_collection] %}
-      {% unless feat_col %}{% assign feat_col = collections.all %}{% endunless %}
-      {% if feat_col and feat_col.products.size > 0 %}
-        {% for product in feat_col.products limit: 4 %}
+      {% if feat_col == blank or feat_col.products.size == 0 %}
+        {% assign feat_col = collections.all %}
+      {% endif %}
+      {% for product in feat_col.products limit: 4 %}
           <div class="product-card">
             <a href="{{ product.url }}">
               <div class="product-card-image">
@@ -123,28 +124,6 @@
             </a>
           </div>
         {% endfor %}
-      {% else %}
-        <div class="product-card">
-          <div class="product-card-image" style="background:#DDD8CC;"></div>
-          <p class="product-name">Cabin Fifteen Sleeve</p>
-          <p class="product-price">Rs 2,490</p>
-        </div>
-        <div class="product-card">
-          <div class="product-card-image" style="background:#DDD8CC;"></div>
-          <p class="product-name">Brahmaputra Trolley</p>
-          <p class="product-price">Rs 12,990</p>
-        </div>
-        <div class="product-card">
-          <div class="product-card-image" style="background:#DDD8CC;"></div>
-          <p class="product-name">Tusk Tumbler</p>
-          <p class="product-price">Rs 1,290</p>
-        </div>
-        <div class="product-card">
-          <div class="product-card-image" style="background:#DDD8CC;"></div>
-          <p class="product-name">Sela Tech Sleeve</p>
-          <p class="product-price">Rs 1,890</p>
-        </div>
-      {% endif %}
     </div>
     <div class="products-footer">
       <a class="view-all-link" href="/collections/all">View all products &rarr;</a>
