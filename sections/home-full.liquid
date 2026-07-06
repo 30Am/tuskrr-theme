@@ -104,7 +104,8 @@
     </div>
     <div class="products-grid">
       {% assign feat_col = collections[section.settings.featured_collection] %}
-      {% if feat_col != blank and feat_col.products.size > 0 %}
+      {% unless feat_col %}{% assign feat_col = collections.all %}{% endunless %}
+      {% if feat_col and feat_col.products.size > 0 %}
         {% for product in feat_col.products limit: 4 %}
           <div class="product-card">
             <a href="{{ product.url }}">
